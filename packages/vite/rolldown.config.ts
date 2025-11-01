@@ -81,6 +81,10 @@ const nodeConfig = defineConfig({
       debug: 'debug/src/node.js',
     },
   },
+  output: {
+    ...sharedNodeOptions.output,
+    sourcemap: true,
+  },
   external: [
     /^vite\//,
     'fsevents',
@@ -153,6 +157,7 @@ const moduleRunnerConfig = defineConfig({
   plugins: [bundleSizeLimit(54), enableSourceMapsInWatchModePlugin()],
   output: {
     ...sharedNodeOptions.output,
+    sourcemap: true,
     minify: {
       compress: true,
       mangle: false,

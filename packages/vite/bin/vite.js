@@ -59,6 +59,7 @@ function start() {
       } catch {}
     }, 10 * 1000).unref()
   } catch {}
+  debugger
   return import('../dist/node/cli.js')
 }
 
